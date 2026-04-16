@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: service3
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: service3
+  template:
+    metadata:
+      labels:
+        app: service3
+    spec:
+      containers:
+        - name: service3
+          image: python:3.11-alpine
+          command: ["python", "-c"]
+          args:
+            - |
+              from flask import Flask
+              app = Flask(__name__)
+
+              @app.route("/")
+              def home():
+                  return "Hello from Service3 Flask App"
+
+              app.run(host="0.0.0.0", port=5000)
+          ports:
+            - containerPort: 5000
