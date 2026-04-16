@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: service2
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: service2
+  template:
+    metadata:
+      labels:
+        app: service2
+    spec:
+      containers:
+        - name: service2
+          image: node:18-alpine
+          command: ["node", "-e"]
+          args:
+            - |
+              const http = require('http');
+              http.createServer((req,res)=>{
+                res.end("Hello from Service2 Node App");
+              }).listen(3000);
+          ports:
+            - containerPort: 3000
