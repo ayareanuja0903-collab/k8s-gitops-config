@@ -3,9 +3,10 @@ kind: Service
 metadata:
   name: service2
 spec:
+  type: LoadBalancer
   selector:
     app: service2
   ports:
     - port: 80
       targetPort: 3000
-  type: ClusterIP
+      nodePort: 30080
