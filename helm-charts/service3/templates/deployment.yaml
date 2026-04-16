@@ -1,5 +1,19 @@
-containers:
-  - name: service3
-    image: anujaayare/service3:1.0
-    ports:
-      - containerPort: 5000
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: service3
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: service3
+  template:
+    metadata:
+      labels:
+        app: service3
+    spec:
+      containers:
+        - name: service3
+          image: anujaayare/service3:1.0
+          ports:
+            - containerPort: 5000
