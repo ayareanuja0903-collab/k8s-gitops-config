@@ -15,16 +15,19 @@ spec:
       containers:
         - name: service3
           image: python:3.11-alpine
-          command: ["python", "-c"]
+          command: ["sh", "-c"]
           args:
             - |
-              from flask import Flask
-              app = Flask(__name__)
+              pip install flask && \
+              python -c "
+from flask import Flask
+app = Flask(__name__)
 
-              @app.route("/")
-              def home():
-                  return "Hello from Service3 Flask App"
+@app.route('/')
+def home():
+    return 'Hello from Service3 Flask App'
 
-              app.run(host="0.0.0.0", port=5000)
+app.run(host='0.0.0.0', port=5000)
+"
           ports:
             - containerPort: 5000
