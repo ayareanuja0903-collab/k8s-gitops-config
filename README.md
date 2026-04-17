@@ -162,37 +162,37 @@ Custom Prometheus alert rules included:
 
 1. Service Access Issues
 
-🔧 Issue: Kubernetes services not accessible externally
+🔧 Issue: Kubernetes services not accessible externally<br/>
 ✅ Fix: Corrected service type (NodePort/LoadBalancer) and updated AWS security group rules
 
 2. Prometheus UI Not Accessible
 
-🔧 Issue: Port 9090 not reachable
+🔧 Issue: Port 9090 not reachable<br/>
 ✅ Fix: Used port-forwarding and exposed service properly
 
 3. ArgoCD Deployment Error
 
-🔧 Issue: spec.project: Required value
+🔧 Issue: spec.project: Required value<br/>
 ✅ Fix: Added missing project field (default) in application manifest
 
 4. Ansible SSH Connectivity Failure
 
-🔧 Issue: Inventory hostname resolution failed
+🔧 Issue: Inventory hostname resolution failed<br/>
 ✅ Fix: Updated inventory with correct EC2 IPs and verified SSH keys
 
 5. Terraform Resource Deletion Issue
 
-🔧 Issue: Subnet deletion blocked
+🔧 Issue: Subnet deletion blocked<br/>
 ✅ Fix: Removed dependent resources (NAT gateway, route tables, ENIs) before destroy
 
 6. Kubernetes Node Not Ready
 
-🔧 Issue: Nodes initially in NotReady state
+🔧 Issue: Nodes initially in NotReady state<br/>
 ✅ Fix: Installed/verified CNI plugin and restarted kubelet
 
 7. GitOps Sync Delay
 
-🔧 Issue: Changes not reflecting in cluster
+🔧 Issue: Changes not reflecting in cluster<br/>
 ✅ Fix: Enabled auto-sync and re-synced ArgoCD applications
 
 ---
