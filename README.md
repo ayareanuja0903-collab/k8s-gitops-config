@@ -88,15 +88,15 @@ k8s-gitops-config/
 <p align="center">
   <img src="images/ArgoCD-application.png" width="800"/>
 </p>
-2) service1 → http://<ELB-URL><br/>
+2) service1 
 <p align="center">
   <img src="images/service1.png" width="800"/>
 </p>
-3) service2 → http://<ELB-URL><br/>
+3) service2
 <p align="center">
   <img src="images/service2.png" width="800"/>
 </p>
-4) service3 → http://<ELB-URL><br/>
+4) service3
 <p align="center">
   <img src="images/service3.png" width="800"/>
 </p>
