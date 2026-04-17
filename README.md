@@ -1,45 +1,87 @@
-Kubernetes GitOps Platform (EKS + ArgoCD + Monitoring)
-🚀 Project Overview
+# 🚀 Kubernetes GitOps Platform (EKS + ArgoCD + Monitoring)
 
-This project demonstrates a production-style Kubernetes GitOps platform built on AWS EKS. It includes automated deployments using ArgoCD, multiple microservices, autoscaling, and full monitoring with Prometheus and Grafana.
+This repository demonstrates a complete **GitOps-based Kubernetes platform** deployed on AWS EKS using Terraform, Ansible, ArgoCD, Helm, Prometheus, and Grafana.
 
-🏗️ Architecture
-AWS EKS Cluster
-Terraform (Infrastructure provisioning)
-ArgoCD (GitOps continuous deployment)
-Helm Charts (Microservices deployment)
-Prometheus (Metrics collection)
-Grafana (Visualization dashboards)
-HPA (Horizontal Pod Autoscaler)
-📦 Components
-🔹 Microservices
-service1 → NGINX app
-service2 → Node.js app
-service3 → Python Flask app
-🔹 GitOps (ArgoCD)
-Automatically syncs Kubernetes manifests from GitHub
-Ensures desired state is always maintained
-Self-healing deployments enabled
-🔹 Monitoring Stack
+---
 
-Installed using Helm:
+## 🏗️ Architecture
 
-helm install monitoring prometheus-community/kube-prometheus-stack -n monitoring
+---
 
-Includes:
+## 📦 Tech Stack
 
-Prometheus
-Grafana
-Alertmanager
-Node Exporter
-kube-state-metrics
-🔹 Autoscaling (HPA)
+* AWS EKS (Kubernetes Cluster)
+* Terraform (Infrastructure provisioning)
+* Ansible (Node configuration)
+* ArgoCD (GitOps CD tool)
+* Helm (Package management)
+* Prometheus (Metrics collection)
+* Grafana (Dashboards)
+* Kubernetes HPA (Auto scaling)
 
-CPU-based autoscaling enabled:
+---
 
-kubectl autoscale deployment service1 -n staging --cpu-percent=50 --min=1 --max=5
-kubectl autoscale deployment service2 -n staging --cpu-percent=50 --min=1 --max=5
-kubectl autoscale deployment service3 -n staging --cpu-percent=50 --min=1 --max=5
+## 🚀 Features
+
+✔ GitOps deployment using ArgoCD<br/>
+✔ 3 Microservices deployed<br/>
+✔ LoadBalancer services (AWS ELB)<br/>
+✔ Horizontal Pod Autoscaling (HPA)<br/>
+✔ CPU-based scaling enabled<br/>
+✔ Prometheus monitoring stack<br/>
+✔ Grafana dashboards<br/>
+✔ Alertmanager integration<br/>
+
+--- 
+
+## 📁 Project Structure
+
+k8s-gitops-config/
+│
+├── helm-charts/
+│   ├── service1/
+│   ├── service2/
+│   └── service3/
+│
+├── argocd-apps/
+│   ├── service1.yaml
+│   ├── service2.yaml
+│   └── service3.yaml
+│
+├── monitoring/
+│   ├── alert-rules.yaml
+│
+├── terraform/
+│   ├── eks-cluster/
+│
+└── README.md
+
+---
+
+## 📌 Microservices
+
+🔹 service1
+* NGINX application
+* Port: 80
+* Type: LoadBalancer
+
+---
+
+🔹 service2
+* Node.js application
+* Port: 3000
+* Type: LoadBalancer
+
+---
+
+🔹 service3
+* Python Flask application
+* Port: 5000
+* Type: LoadBalancer
+
+---
+
+
 📊 Access Services
 Services (LoadBalancer)
 service1 → http://<ELB-URL>
