@@ -109,14 +109,51 @@ k8s-gitops-config/
   <img src="images/service3.png" width="800"/>
 </p>
 
-Default login:
+---
 
-Username: admin
-Password:
-kubectl get secret -n monitoring monitoring-grafana \
--o jsonpath="{.data.admin-password}" | base64 --decode
-Prometheus
-kubectl port-forward -n monitoring svc/monitoring-kube-prometheus-prometheus 9090:9090
+## 📈 Prometheus Access
+
+<p align="center">
+  <img src="images/service3.png" width="800"/>
+</p>
+
+---
+
+## ⚡ Autoscaling (HPA)
+
+CPU-based autoscaling configured:
+
+```bash
+kubectl autoscale deployment service1 -n staging --cpu-percent=50 --min=1 --max=5
+kubectl autoscale deployment service2 -n staging --cpu-percent=50 --min=1 --max=5
+kubectl autoscale deployment service3 -n staging --cpu-percent=50 --min=1 --max=5
+```
+---
+
+## 📊 Monitoring Stack
+
+Installed using Helm:
+
+helm install monitoring prometheus-community/kube-prometheus-stack -n monitoring
+
+Includes:
+* Prometheus
+* Grafana
+* Alertmanager
+* Node Exporter
+*kube-state-metrics
+
+---
+
+## 🚨 Alerting
+
+Custom Prometheus alert rules included:
+
+* High CPU usage alert
+* Pod restart alert
+
+---
+
 
 Open:
 
