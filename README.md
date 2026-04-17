@@ -7,7 +7,7 @@ This repository demonstrates a complete **GitOps-based Kubernetes platform** dep
 ## 🏗️ Architecture
 
 <p align="center">
-  <img src="images/Architecture.png" width="800"/>
+  <img src="images/Architecture.jpg" width="800"/>
 </p>
 
 ---
@@ -90,19 +90,19 @@ k8s-gitops-config/
  <EXTERNAL-URL> with AWS LoadBalancer URL.
 1) Services (LoadBalancer)<br/>
 <p align="center">
-  <img src="images/ArgoCD-application.png" width="800"/>
+  <img src="images/ArgoCD-application.jpg" width="800"/>
 </p>
 2) service1 
 <p align="center">
-  <img src="images/service1.png" width="800"/>
+  <img src="images/service1.jpg" width="800"/>
 </p>
 3) service2
 <p align="center">
-  <img src="images/service2.png" width="800"/>
+  <img src="images/service2.jpg" width="800"/>
 </p>
 4) service3
 <p align="center">
-  <img src="images/service3.png" width="800"/>
+  <img src="images/service3.jpg" width="800"/>
 </p>
 
 ---
@@ -110,7 +110,7 @@ k8s-gitops-config/
 ## 📊 Grafana Access
 
 <p align="center">
-  <img src="images/graffana-dashboard.png" width="800"/>
+  <img src="images/graffana-dashboard.jpg" width="800"/>
 </p>
 
 ---
@@ -118,7 +118,7 @@ k8s-gitops-config/
 ## 📈 Prometheus Access
 
 <p align="center">
-  <img src="images/service3.png" width="800"/>
+  <img src="images/service3.jpg" width="800"/>
 </p>
 
 ---
@@ -155,17 +155,17 @@ Custom Prometheus alert rules included:
 
 * High CPU usage alert<br/>
 <p align="center">
-  <img src="images/alerts.png" width="800"/>
+  <img src="images/alerts.jpg" width="800"/>
 </p><br/>
 
 * Slack alert
   <p align="center">
-  <img src="images/app-slack.png" width="800"/>
+  <img src="images/app-slack.jpg" width="800"/>
 </p><br/>
 
 * Email alert
   <p align="center">
-  <img src="images/email-alert.png" width="800"/>
+  <img src="images/email-alert.jpg" width="800"/>
 </p><br/>
 
 ---
