@@ -101,9 +101,13 @@ k8s-gitops-config/
   <img src="images/service3.png" width="800"/>
 </p>
 
+---
 
-Grafana
-http://<grafana-elb-url>
+## 📊 Grafana Access
+
+<p align="center">
+  <img src="images/service3.png" width="800"/>
+</p>
 
 Default login:
 
