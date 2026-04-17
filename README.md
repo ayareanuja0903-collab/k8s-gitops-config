@@ -85,9 +85,21 @@ k8s-gitops-config/
 
  <EXTERNAL-URL> with AWS LoadBalancer URL.
 1) Services (LoadBalancer)
+<p align="center">
+  <img src="images/Kubernetes%20cluster%20architecture.png" width="800"/>
+</p>
 2) service1 → http://<ELB-URL>
+<p align="center">
+  <img src="images/Kubernetes%20cluster%20architecture.png" width="800"/>
+</p>
 3) service2 → http://<ELB-URL>
+<p align="center">
+  <img src="images/Kubernetes%20cluster%20architecture.png" width="800"/>
+</p>
 4) service3 → http://<ELB-URL>
+<p align="center">
+  <img src="images/Kubernetes%20cluster%20architecture.png" width="800"/>
+</p>
 
 
 Grafana
