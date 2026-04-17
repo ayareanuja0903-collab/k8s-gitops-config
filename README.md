@@ -6,6 +6,9 @@ This repository demonstrates a complete **GitOps-based Kubernetes platform** dep
 
 ## 🏗️ Architecture
 
+<p align="center">
+  <img src="images/Architechture.png" width="800"/>
+</p>
 ---
 
 ## 📦 Tech Stack
@@ -106,7 +109,7 @@ k8s-gitops-config/
 ## 📊 Grafana Access
 
 <p align="center">
-  <img src="images/service3.png" width="800"/>
+  <img src="images/graffana-dashboard.png" width="800"/>
 </p>
 
 ---
