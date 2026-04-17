@@ -38,30 +38,6 @@ This repository demonstrates a complete **GitOps-based Kubernetes platform** dep
 
 --- 
 
-## 📁 Project Structure
-```bash
-k8s-gitops-config/
-│
-├── helm-charts/
-│   ├── service1/
-│   ├── service2/
-│   └── service3/
-│
-├── argocd-apps/
-│   ├── service1.yaml
-│   ├── service2.yaml
-│   └── service3.yaml
-│
-├── monitoring/
-│   ├── alert-rules.yaml
-│
-├── terraform/
-│   ├── eks-cluster/
-│
-└── README.md
-```
----
-
 ## 📌 Microservices
 
 🔹 service1
