@@ -153,8 +153,20 @@ Includes:
 
 Custom Prometheus alert rules included:
 
-* High CPU usage alert
-* Pod restart alert
+* High CPU usage alert<br/>
+<p align="center">
+  <img src="images/alerts.png" width="800"/>
+</p><br/>
+
+* Slack alert
+  <p align="center">
+  <img src="images/app-slack.png" width="800"/>
+</p><br/>
+
+* Email alert
+  <p align="center">
+  <img src="images/email-alert.png" width="800"/>
+</p><br/>
 
 ---
 
