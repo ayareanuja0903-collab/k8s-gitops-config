@@ -158,43 +158,66 @@ Custom Prometheus alert rules included:
 
 ---
 
+## 🚧 Challenges & Solutions
 
-Open:
+1. Service Access Issues
 
-http://localhost:9090
-📈 Features Implemented
+🔧 Issue: Kubernetes services not accessible externally
+✅ Fix: Corrected service type (NodePort/LoadBalancer) and updated AWS security group rules
 
-✔ EKS Cluster via Terraform
-✔ GitOps CI/CD using ArgoCD
-✔ Helm-based deployments
-✔ 3 Microservices deployed
-✔ LoadBalancer services
-✔ Horizontal Pod Autoscaler (HPA)
-✔ Prometheus monitoring
-✔ Grafana dashboards
-✔ Alertmanager setup
+2. Prometheus UI Not Accessible
 
-🚀 Deployment Flow
-GitHub Repo
-   ↓
-ArgoCD Sync
-   ↓
-Kubernetes Cluster (EKS)
-   ↓
-Pods + Services + HPA
-   ↓
-Prometheus Metrics
-   ↓
-Grafana Dashboards
-📂 Project Structure
-k8s-gitops-config/
-│
-├── helm-charts/
-│   ├── service1/
-│   ├── service2/
-│   └── service3/
-│
-├── argocd-apps/
-├── monitoring/
-├── terraform/
-└── README.md
+🔧 Issue: Port 9090 not reachable
+✅ Fix: Used port-forwarding and exposed service properly
+
+3. ArgoCD Deployment Error
+
+🔧 Issue: spec.project: Required value
+✅ Fix: Added missing project field (default) in application manifest
+
+4. Ansible SSH Connectivity Failure
+
+🔧 Issue: Inventory hostname resolution failed
+✅ Fix: Updated inventory with correct EC2 IPs and verified SSH keys
+
+5. Terraform Resource Deletion Issue
+
+🔧 Issue: Subnet deletion blocked
+✅ Fix: Removed dependent resources (NAT gateway, route tables, ENIs) before destroy
+
+6. Kubernetes Node Not Ready
+
+🔧 Issue: Nodes initially in NotReady state
+✅ Fix: Installed/verified CNI plugin and restarted kubelet
+
+7. GitOps Sync Delay
+
+🔧 Issue: Changes not reflecting in cluster
+✅ Fix: Enabled auto-sync and re-synced ArgoCD applications
+
+---
+
+## 🎯 Final Outcome
+
+After resolving all issues:
+
+✔ Fully working GitOps pipeline (ArgoCD)<br/>
+✔ 3 Microservices deployed successfully<br/>
+✔ LoadBalancer services accessible<br/>
+✔ HPA autoscaling enabled<br/>
+✔ Prometheus + Grafana monitoring working<br/>
+✔ Alerts system configured<br/>
+
+---
+
+## 🚀 Key Learning
+
+* Debugging Kubernetes networking issues
+* AWS LoadBalancer + Security Groups
+* ArgoCD GitOps troubleshooting
+* Metrics-server + HPA behavior
+* Docker image dependency management
+* Observability stack (Prometheus/Grafana)
+
+---
+
