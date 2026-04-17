@@ -39,7 +39,7 @@ This repository demonstrates a complete **GitOps-based Kubernetes platform** dep
 --- 
 
 ## 📁 Project Structure
-
+```bash
 k8s-gitops-config/
 │
 ├── helm-charts/
@@ -59,7 +59,7 @@ k8s-gitops-config/
 │   ├── eks-cluster/
 │
 └── README.md
-
+```
 ---
 
 ## 📌 Microservices
@@ -118,7 +118,7 @@ k8s-gitops-config/
 ## 📈 Prometheus Access
 
 <p align="center">
-  <img src="images/service3.jpg" width="800"/>
+  <img src="images/alerts.jpg" width="800"/>
 </p>
 
 ---
