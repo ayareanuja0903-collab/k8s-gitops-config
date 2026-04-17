@@ -81,12 +81,15 @@ k8s-gitops-config/
 
 ---
 
+🌐 Access Services
 
-📊 Access Services
-Services (LoadBalancer)
-service1 → http://<ELB-URL>
-service2 → http://<ELB-URL>
-service3 → http://<ELB-URL>
+ <EXTERNAL-URL> with AWS LoadBalancer URL.
+1) Services (LoadBalancer)
+2) service1 → http://<ELB-URL>
+3) service2 → http://<ELB-URL>
+4) service3 → http://<ELB-URL>
+
+
 Grafana
 http://<grafana-elb-url>
 
