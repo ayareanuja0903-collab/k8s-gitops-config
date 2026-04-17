@@ -9,6 +9,7 @@ This repository demonstrates a complete **GitOps-based Kubernetes platform** dep
 <p align="center">
   <img src="images/Architecture.png" width="800"/>
 </p>
+
 ---
 
 ## 📦 Tech Stack
