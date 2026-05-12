@@ -7,7 +7,7 @@ This repository demonstrates a complete **GitOps-based Kubernetes platform** dep
 ## 🏗️ Architecture
 
 <p align="center">
-  <img src="images/Architecture.jpg" width="800"/>
+  <img src="images/Architecture.png" width="800"/>
 </p>
 
 ---
@@ -37,30 +37,6 @@ This repository demonstrates a complete **GitOps-based Kubernetes platform** dep
 ✔ Alertmanager integration<br/>
 
 --- 
-
-## 📁 Project Structure
-
-k8s-gitops-config/
-│
-├── helm-charts/
-│   ├── service1/
-│   ├── service2/
-│   └── service3/
-│
-├── argocd-apps/
-│   ├── service1.yaml
-│   ├── service2.yaml
-│   └── service3.yaml
-│
-├── monitoring/
-│   ├── alert-rules.yaml
-│
-├── terraform/
-│   ├── eks-cluster/
-│
-└── README.md
-
----
 
 ## 📌 Microservices
 
@@ -118,7 +94,7 @@ k8s-gitops-config/
 ## 📈 Prometheus Access
 
 <p align="center">
-  <img src="images/service3.jpg" width="800"/>
+  <img src="images/alerts.jpg" width="800"/>
 </p>
 
 ---
