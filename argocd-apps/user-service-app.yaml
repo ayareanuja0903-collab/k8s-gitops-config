@@ -1,0 +1,29 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: user-service
+  namespace: argocd
+
+spec:
+  project: devops-project
+
+  source:
+    repoURL: https://github.com/your-org/k8s-gitops-platform
+    targetRevision: HEAD
+    path: helm/user-service-chart
+
+    helm:
+      valueFiles:
+        - ../../../k8s-gitops-config/staging/user-service/values.yaml
+
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: staging
+
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+
+    syncOptions:
+      - CreateNamespace=true

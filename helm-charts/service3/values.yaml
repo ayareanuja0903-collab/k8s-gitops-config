@@ -1,8 +1,0 @@
-replicaCount: 1
-
-image:
-  repository: python
-  tag: 3.11-alpine
-
-service:
-  port: 5000

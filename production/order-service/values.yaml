@@ -1,0 +1,32 @@
+replicaCount: 4
+
+image:
+  repository: anuja/order-service
+  tag: production
+  pullPolicy: Always
+
+service:
+  type: ClusterIP
+  port: 80
+
+containerPort: 3002
+
+ingress:
+  enabled: true
+  className: nginx
+  host: order.example.com
+
+resources:
+  limits:
+    cpu: 1
+    memory: 1Gi
+
+  requests:
+    cpu: 500m
+    memory: 512Mi
+
+config:
+  APP_ENV: production
+
+secret:
+  DB_PASSWORD: production-password

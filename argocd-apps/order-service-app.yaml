@@ -1,0 +1,29 @@
+piVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: order-service
+  namespace: argocd
+
+spec:
+  project: devops-project
+
+  source:
+    repoURL: https://github.com/your-org/k8s-gitops-platform
+    targetRevision: HEAD
+    path: helm/order-service-chart
+
+    helm:
+      valueFiles:
+        - ../../../k8s-gitops-config/staging/order-service/values.yaml
+
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: staging
+
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+
+    syncOptions:
+      - CreateNamespace=true

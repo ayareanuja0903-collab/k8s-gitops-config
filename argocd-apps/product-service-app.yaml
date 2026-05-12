@@ -1,0 +1,29 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: product-service
+  namespace: argocd
+
+spec:
+  project: devops-project
+
+  source:
+    repoURL: https://github.com/your-org/k8s-gitops-platform
+    targetRevision: HEAD
+    path: helm/product-service-chart
+
+    helm:
+      valueFiles:
+        - ../../../k8s-gitops-config/staging/product-service/values.yaml
+
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: staging
+
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+
+    syncOptions:
+      - CreateNamespace=true

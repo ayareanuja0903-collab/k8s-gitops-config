@@ -1,0 +1,32 @@
+replicaCount: 2
+
+image:
+  repository: anuja/order-service
+  tag: staging
+  pullPolicy: Always
+
+service:
+  type: ClusterIP
+  port: 80
+
+containerPort: 3002
+
+ingress:
+  enabled: true
+  className: nginx
+  host: order-staging.example.com
+
+resources:
+  limits:
+    cpu: 500m
+    memory: 512Mi
+
+  requests:
+    cpu: 250m
+    memory: 256Mi
+
+config:
+  APP_ENV: staging
+
+secret:
+  DB_PASSWORD: staging-password

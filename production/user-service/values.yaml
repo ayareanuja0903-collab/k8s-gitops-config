@@ -1,0 +1,38 @@
+replicaCount: 4
+
+image:
+  repository: anuja/user-service
+  tag: production
+  pullPolicy: Always
+
+service:
+  type: ClusterIP
+  port: 80
+
+containerPort: 3000
+
+ingress:
+  enabled: true
+  className: nginx
+  host: user.example.com
+
+resources:
+  limits:
+    cpu: 1
+    memory: 1Gi
+
+  requests:
+    cpu: 500m
+    memory: 512Mi
+
+config:
+  APP_ENV: production
+
+secret:
+  DB_PASSWORD: production-password
+
+hpa:
+  enabled: true
+  minReplicas: 2
+  maxReplicas: 8
+  cpuUtilization: 70
